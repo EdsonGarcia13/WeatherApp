@@ -110,8 +110,33 @@ background-image: linear-gradient(to bottom, rgba(82, 82, 82, 0.1), rgba(59, 59,
   font-weight: bold;
 }
 
+
 .icon{
   width: 12%;
   height: 12%;
   margin-top: -30px;
+}
+
+
+@media (max-width: 630px) {
+  .location-box{
+    margin-top: 20px;
+  }
+  .search-box .search-bar {
+    width: 70%;
+  }
+  .weather-box {
+    margin-top: 50px;
+  }
+  .weather-box .temp {
+    font-size: 100px;
+  }
+  .icon{
+    width: 20%;
+    height: 20%;
+    margin-top: 20px;
+  }
+  .button-convertion{
+    margin-left: 95px;
+  }
 }
