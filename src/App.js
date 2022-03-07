@@ -30,7 +30,6 @@ function App() {
   }
   useEffect (() => {
     navigator.geolocation.getCurrentPosition(success);
-    console.log(weather);
   }, []);
 
   const [isClick, setIsClick] = useState(false);
