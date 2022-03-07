@@ -80,11 +80,9 @@ function App() {
           </div>
           <div className="weather-box">
             <div className="temp">
-              
               {convertion(weather.main.temp)}
-              <button className='button-convertion' onClick={handleClick}>Convertion</button>
-      
             </div>
+            <button className='button-convertion' onClick={handleClick}>Convertion</button>
             <div className="weather">{weather.weather[0].main}</div>
             <img className='icon' src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="" />
           </div>
