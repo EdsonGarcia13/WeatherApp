@@ -30,6 +30,7 @@ function App() {
   }
   useEffect (() => {
     navigator.geolocation.getCurrentPosition(success);
+    console.log(weather);
   }, []);
 
   const [isClick, setIsClick] = useState(false);
@@ -56,6 +57,14 @@ function App() {
 
     return `${day} ${date} ${month} ${year}`
   }
+
+  const timeBuilder = (d) => {
+    let hours = d.getHours();
+    let minutes = d.getMinutes();
+    let timeOfDay = (hours >= 12) ? "PM" : "AM";
+    return `${hours}:${minutes} ${timeOfDay}`
+    
+  }
   
   return (
     <div className={(typeof weather.main != "undefined") ? ((weather.main.temp < 16) ? 'app warm' : 'app'): 'app'}>
@@ -74,9 +83,9 @@ function App() {
         {(typeof weather.main != "undefined") ? (
         <div>
           <div className="location-box">
-            
             <div className="location">{weather.name}, {weather.sys.country}</div>
             <div className="date">{dateBuilder(new Date())}</div>
+            <div className="time">{timeBuilder(new Date())}</div>
           </div>
           <div className="weather-box">
             <div className="temp">
